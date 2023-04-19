@@ -53,6 +53,9 @@ const App = () => {
                 >
                   <SearchBar handleSearch={handleSearch} />
                 </SearchContext.Provider>
+                <DataContext.Provider value={data}>
+                  <Gallery />
+                </DataContext.Provider>
               </>
             }
           />
@@ -60,10 +63,6 @@ const App = () => {
           <Route path="/artist/:id" element={<ArtistView />} />
         </Routes>
       </Router>
-
-      <DataContext.Provider value={data}>
-        <Gallery />
-      </DataContext.Provider>
     </div>
   );
 };
